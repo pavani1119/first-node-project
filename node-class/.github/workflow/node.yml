@@ -1,0 +1,14 @@
+name: node-workflow
+on: push
+jobs: 
+  node-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get code
+        uses: actions/checkout@v4
+      - name: install nodejs
+        uses: actions/setup-node@v4
+        with: 
+          node-version: 18
+      - name: Install Dependencies
+        run: npm ci
