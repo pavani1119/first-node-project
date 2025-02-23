@@ -12,11 +12,12 @@ jobs:
           node-version: 18
       - name: Install Dependencies
         run: npm ci
-        
+
       - name: run test
         run: npm test
 
   deploy:
+    needs:  node-test
     runs-on: ubuntu-latest
     steps:
       - name: get code
