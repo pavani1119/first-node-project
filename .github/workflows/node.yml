@@ -1,5 +1,5 @@
 name: node-workflow
-on: push
+on: [push, workflow-dispatch]
 jobs: 
   node-test:
     runs-on: ubuntu-latest
