@@ -1,5 +1,8 @@
 name: node-workflow
-on: [push, workflow_dispatch]
+on:
+  pull_request:
+    types:
+      - opened
 jobs: 
   node-test:
     runs-on: ubuntu-latest
