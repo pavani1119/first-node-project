@@ -3,6 +3,12 @@ on:
   pull_request:
     types:
       - opened
+    workflow_dispatch:
+    push:
+      branches:
+        - main
+        - 'feature-*' #feature-branch or feature-code
+        - 'feature/**' #feature/branch or feature/code/branch
 jobs: 
   node-test:
     runs-on: ubuntu-latest
