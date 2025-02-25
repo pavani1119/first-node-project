@@ -3,6 +3,11 @@ on:
   pull_request:
     types:
       - opened
+    branches:
+      - main
+      - 'feature-*'  # Matches branches like feature-branch or feature-code
+      - 'feature/**'  # Matches branches like feature/branch or feature/code/branch
+
   workflow_dispatch:  # Allows the workflow to be triggered manually
   push:
     branches:
