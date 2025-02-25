@@ -15,7 +15,7 @@ on:
       - 'feature-*'  # Matches branches like feature-branch or feature-code
       - 'feature/**'  # Matches branches like feature/branch or feature/code/branch
     paths:
-      - '.github/workflows/*'
+      - '.github/workflows/*' # this will initiate the pipeline
 
 jobs: 
   node-test:
