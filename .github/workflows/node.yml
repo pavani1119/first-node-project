@@ -3,15 +3,16 @@ on:
   pull_request:
     types:
       - opened
-    workflow_dispatch:
-    push:
-      branches:
-        - main
-        - 'feature-*' #feature-branch or feature-code
-        - 'feature/**' #feature/branch or feature/code/branch
-  jobs: 
-    node-test:
-      runs-on: ubuntu-latest
+  workflow_dispatch:  # Allows the workflow to be triggered manually
+  push:
+    branches:
+      - main
+      - 'feature-*'  # Matches branches like feature-branch or feature-code
+      - 'feature/**'  # Matches branches like feature/branch or feature/code/branch
+
+jobs: 
+  node-test:
+    runs-on: ubuntu-latest
     steps:
       - name: get code
         uses: actions/checkout@v4
@@ -21,12 +22,11 @@ on:
           node-version: 18
       - name: Install Dependencies
         run: npm ci
-
       - name: run test
         run: npm test
 
   deploy:
-    needs:  node-test
+    needs: node-test
     runs-on: ubuntu-latest
     steps:
       - name: get code
@@ -41,5 +41,6 @@ on:
         run: npm run build
       - name: deploy
         run: echo "deploying...."
+
 
 
