@@ -14,7 +14,7 @@ on:
       - main
       - 'feature-*'  # Matches branches like feature-branch or feature-code
       - 'feature/**'  # Matches branches like feature/branch or feature/code/branch
-    paths-ignore:
+    paths:
       - '.github/workflows/*'
 
 jobs: 
