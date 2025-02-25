@@ -9,9 +9,9 @@ on:
         - main
         - 'feature-*' #feature-branch or feature-code
         - 'feature/**' #feature/branch or feature/code/branch
-jobs: 
-  node-test:
-    runs-on: ubuntu-latest
+  jobs: 
+    node-test:
+      runs-on: ubuntu-latest
     steps:
       - name: get code
         uses: actions/checkout@v4
