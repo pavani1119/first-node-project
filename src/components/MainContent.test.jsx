@@ -19,3 +19,5 @@ describe('MainContent', () => {
     expect(screen.getByTestId('help-area')).toBeInTheDocument();
   });
 });
+
+//cancel the workflow
