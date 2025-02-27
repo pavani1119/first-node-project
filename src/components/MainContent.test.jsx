@@ -21,3 +21,4 @@ describe('MainContent', () => {
 });
 
 //cancel the workflow
+//skip the workflow
